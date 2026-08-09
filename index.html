@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ООП: Классы персонажей</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>⚔️ Мир персонажей: ООП на классах ES6</h1>
+
+        <!-- Форма создания Орка -->
+        <section class="section orc-section">
+            <h2>🪓 Создать Орка</h2>
+            <form id="orcForm">
+                <div class="form-group">
+                    <label for="orcName">Имя орка:</label>
+                    <input type="text" id="orcName" placeholder="Например: Громмаш" required>
+                </div>
+                <div class="form-group">
+                    <label for="orcWeapon">Оружие:</label>
+                    <input type="text" id="orcWeapon" placeholder="Например: топор" required>
+                </div>
+                <button type="submit" class="btn btn-orc">Создать Орка</button>
+            </form>
+        </section>
+
+        <!-- Форма создания Эльфа -->
+        <section class="section elf-section">
+            <h2>🧝 Создать Эльфа</h2>
+            <form id="elfForm">
+                <div class="form-group">
+                    <label for="elfName">Имя эльфа:</label>
+                    <input type="text" id="elfName" placeholder="Например: Леголас" required>
+                </div>
+                <div class="form-group">
+                    <label for="elfSpell">Тип заклинаний:</label>
+                    <input type="text" id="elfSpell" placeholder="Например: огонь" required>
+                </div>
+                <button type="submit" class="btn btn-elf">Создать Эльфа</button>
+            </form>
+        </section>
+
+        <!-- Панель управления созданными персонажами -->
+        <section class="section" id="controls" style="display: none;">
+            <h2>🎮 Управление персонажами</h2>
+
+            <div id="orcControls" style="display: none;" class="character-controls">
+                <h3 id="orcTitle">Орк</h3>
+                <div class="character-info" id="orcInfo"></div>
+                <div class="button-group">
+                    <button onclick="orcSpeak()" class="btn btn-orc">Говорить</button>
+                    <button onclick="orcStrike()" class="btn btn-orc">Ударить</button>
+                </div>
+            </div>
+
+            <div id="elfControls" style="display: none;" class="character-controls">
+                <h3 id="elfTitle">Эльф</h3>
+                <div class="character-info" id="elfInfo"></div>
+                <div class="button-group">
+                    <button onclick="elfSpeak()" class="btn btn-elf">Говорить</button>
+                    <button onclick="elfCastSpell()" class="btn btn-elf">Создать заклинание</button>
+                </div>
+            </div>
+
+            <div class="button-group" style="margin-top: 20px;">
+                <button onclick="partySpeak()" class="btn btn-primary">🎭 Полиморфизм: все говорят</button>
+            </div>
+        </section>
+
+        <!-- Консоль вывода -->
+        <section class="section">
+            <h2>📜 Консоль мира</h2>
+            <div id="console" class="console"></div>
+            <button onclick="clearConsole()" class="btn btn-secondary">Очистить консоль</button>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
